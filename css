@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int i,x,zasieg;
+auto w ="milosc";
+auto m = 12;
+auto j = 12;
+
+int*wektor=(int*)malloc(x*sizeof());
+int*wektor2=(int*)malloc(x*sizeof());
+
+void fun() {
+    srand(time(NULL));
+    std::cout <<  << std::endl;
+    
+    std::cout<<"Podaj x = ";
+    std::cin >> x;
+    
+    std::cout <<  << std::endl;
+    
+    std::cout <<  << "Podaj zasieg x";
+    std::cin >> zasieg;
+    
+    for(i=0;i<x;i++) {
+        *(wektor+i) = rand()%zasieg;
+        std::cout << "wektor["<<i<<"] = " << (wektor+i) << std::endl;
+    }
+    std::cout <<  << std::endl;
+    
+    for(i=0;i<x;i++) {
+        *(wektor2+i) = rand()%zasieg;
+        std::cout << "wektor["<<i<<"] = " << (wektor2+i) << std::endl;
+    }
+    std::cout <<  << std::endl;
+    
+    for(i=0;i<x;i++) {
+        std::cout << "adresy wektor["<<i<<"] = " << wektor+i << std::endl;
+    }
+    std::cout <<  << std::endl;
+    
+    for(i=0;i<x;i++) {
+        std::cout << "adresy wektor2["<<i<<"] = " << wektor2+i << std::endl;
+    }
+    std::cout <<  << std::endl;
+    
+    for(i=0;i<x;i++) {
+        std::cout << "suma wektor["<<i<<"] = " << *(wektor+i)+(*(wektor2+i)) << std::endl;
+    }
+    std::cout <<  << std::endl;
+    
+    std::cout << "Wynik = " << m+j << std::endl;
+    
+    
+    free(wektor);
+    free(wektor2);
+}
+int main (int args, const char * argv[]){
+    fun();
+    
+    return EXIT_SUCCESS;
+}
