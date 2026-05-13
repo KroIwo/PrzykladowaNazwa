@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista zakupów</title>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Wpisz Tekst">
+    <button id="dodajprzycisk">Dodaj</button>
+    <ul id="lista"></ul>
+    <script src="scrypt.js"></script>
+</body>
+</html>
+
+const input = document.getElementById("inputText");
+const button = document.getElementById("dodajprzycisk");
+const lista = document.getElementById("lista");
+
+button.addEventListener("click", function(){
+    
+    if (input.value.trim() === "") {
+        alert("Pole nie może być puste!");
+        return;
+    }
+
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    span.textContent = "Usuń";
+    span.classList.add("Usuń");
+
+    span.addEventListener("click", function() {
+        li.remove();
+    })
+    li.appendChild(span);
+    lista.appendChild(li);
+
+    input.value = "";
+
+    
+});
